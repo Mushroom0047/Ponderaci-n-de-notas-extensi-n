@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Ponderación de Notas",
+    "version": "1.0",
+    "description": "Calcula el Promedio Ponderado de Notas y Examen Final.",
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "permissions": []
+  }
