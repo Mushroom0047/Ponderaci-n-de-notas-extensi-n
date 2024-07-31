@@ -24,39 +24,39 @@
       <div class="content p-4">
         <section id="content1">
           <table class="tabla-notas w-full bg-white border table-fixed"> 
-            <thead class="text-left bg-green-100">
+            <thead class="text-left">
               <tr>
                 <th>
-                  <button id="agregar-nota" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+                  <button id="agregar-nota" class="bg-green-600 text-white p-2 rounded hover:bg-green-700">
                     Agregar nota
                   </button>
                 </th>
               </tr>
             </thead>         
-            <tbody id="tbody-default" class="w-full bg-red-100">              
+            <tbody id="tbody-default" class="w-full">              
               <tr>
                 <td class="w-1/3 p-2 border-b">Nota 1</td>
                 <td class="w-1/3 p-2 border-b">
                   <input 
                     type="number" 
                     min="0" 
-                    max="7" 
-                    step="0.1"
-                    class="w-full p-2 border rounded mr-2">
-                </td>
-                <td class="w-1/3 p-2 border-b">
-                  <div class="flex items-center">
-                    <input 
-                      type="number"
-                      min="0"
-                      max="100" 
-                      class="w-full p-2 border rounded mr-2">
-                    <span>%</span>
-                  </div>
-                </td>              
-              </tr>
+                    max="70" 
+                    step="1"
+                    class="input-nota w-full p-2 border rounded mr-2">
+                  </td>
+                  <td class="w-1/3 p-2 border-b">
+                    <div class="flex items-center">
+                      <input 
+                        type="number"
+                        min="0"
+                        max="100" 
+                        class="input-ponderacion w-full p-2 border rounded mr-2">
+                      <span>%</span>
+                    </div>
+                  </td>              
+                </tr>                
             </tbody>          
-            <tfoot class="bg-blue-100">
+            <tfoot class="--bg-blue-100">        
               <tr>
                 <td class="w-1/4 p-2 border-t">Nota aprobación exámen</td>
                 <td class="w-1/4 p-2 border-t">
@@ -79,11 +79,23 @@
                   </div>
                 </td>
               </tr>
+              <tr>      
+                <td class="py-2" colspan="2">
+                  <button id="btn-calcular-promedio" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+                    Calcular Promedio
+                  </button>
+                </td>
+                <td class="py-2" colspan="2">
+                  <button id="clear-data" class="w-full bg-red-800 text-white p-2 rounded hover:bg-red-900">
+                    Eliminar datos
+                  </button>
+                </td>
+              </tr>
             </tfoot>
           </table>
 
-          <div class="w-full bg-yellow-100">
-            resultados
+          <div class="w-full bg-yellow-100 p-2">
+            <p id="alerts"></p>
           </div>
         </section>
       </div>
