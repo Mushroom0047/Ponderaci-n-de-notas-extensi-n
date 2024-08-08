@@ -6,102 +6,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ponderación de Notas</title>
   <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="styles/icons.css">
   <link rel="stylesheet" href="styles/tailwind.min.css">
 </head>
 
 <body>
-  <h1 class="text-3xl">Ponderación de Notas</h1>
+  <h1 class="text-3xl pb-4">Ponderación de Notas</h1>
+  <!-- Icono (usando Heroicons) -->
+  <section class="bg-white border border-gray-300 rounded-lg p-6">
+    <!-- Botón agregar nota -->
+    <div class="mb-4">
+      <button id="agregar-nota" class="flex gap-2 items-center bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+        </svg>      
+        Agregar Nota
+      </button>
+    </div>
 
-  <div class="w-full mx-auto mt-10">
-    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-      <div class="flex justify-around border-b">
-        <input type="radio" id="tab1" name="tab-control" class="hidden" checked>
-        <label for="tab1" class="cursor-pointer py-4 w-full text-center hover:bg-gray-200">
-          <span class="text-lg">Nota</span>
-        </label>
+    <!-- Div inputs -->
+    <div class="flex flex-col mb-4 w-full" id="div-inputs"></div>
+
+    <!-- Div examen -->
+    <div class="flex p-4 bg-blue-100 rounded-md space-x-4">
+      <div class="flex-1 p-2">
+        <label for="input-nota-examen" class="font-bold block mb-2">Nota de exámen</label>
+        <input type="number" id="input-nota-examen" class="w-full p-2" min="1" max="7" step="0.1">
       </div>
-      <div class="content p-4">
-        <section id="content1">
-          <table class="tabla-notas w-full bg-white border table-fixed"> 
-            <thead class="text-left">
-              <tr>
-                <th>
-                  <button id="agregar-nota" class="bg-green-600 text-white p-2 rounded hover:bg-green-700">
-                    Agregar nota
-                  </button>
-                </th>
-              </tr>
-            </thead>         
-            <tbody id="tbody-default" class="w-full">              
-              <tr>
-                <td class="w-1/3 p-2 border-b">Nota 1</td>
-                <td class="w-1/3 p-2 border-b">
-                  <input 
-                    type="number" 
-                    min="0" 
-                    max="70" 
-                    step="1"
-                    class="input-nota w-full p-2 border rounded mr-2">
-                  </td>
-                  <td class="w-1/3 p-2 border-b">
-                    <div class="flex items-center">
-                      <input 
-                        type="number"
-                        min="0"
-                        max="100" 
-                        class="input-ponderacion w-full p-2 border rounded mr-2">
-                      <span>%</span>
-                    </div>
-                  </td>              
-                </tr>                
-            </tbody>          
-            <tfoot class="--bg-blue-100">        
-              <tr>
-                <td class="w-1/4 p-2 border-t">Nota aprobación exámen</td>
-                <td class="w-1/4 p-2 border-t">
-                  <input 
-                    type="number" 
-                    min="0" 
-                    max="7" 
-                    step="0.1"
-                    class="w-full p-2 border rounded mr-2">
-                </td>
-                <td class="w-1/4 p-2 border-t">Ponderación exámen</td>
-                <td class="w-1/4 p-2 border-t">
-                  <div class="flex items-center">
-                    <input 
-                      type="number"
-                      min="0"
-                      max="100" 
-                      class="w-full p-2 border rounded mr-2">
-                    <span>%</span>
-                  </div>
-                </td>
-              </tr>
-              <tr>      
-                <td class="py-2" colspan="2">
-                  <button id="btn-calcular-promedio" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
-                    Calcular Promedio
-                  </button>
-                </td>
-                <td class="py-2" colspan="2">
-                  <button id="clear-data" class="w-full bg-red-800 text-white p-2 rounded hover:bg-red-900">
-                    Eliminar datos
-                  </button>
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-
-          <div class="w-full bg-yellow-100 p-2">
-            <p id="alerts"></p>
-          </div>
-        </section>
+      <div class="flex-1 p-2">
+        <label for="input-ponderacion-examen" class="font-bold block mb-2">Ponderación %</label>
+        <input type="number" id="input-ponderacion-examen" class="w-full p-2" min="1" max="100" step="1">
       </div>
     </div>
-  </div>
-  <script src="popup.js"></script>
-</body>
 
+    <!-- Div resultados -->
+    <div class="flex p-4 bg-blue-200 rounded-md space-x-4">
+      <div class="flex-1 p-2">
+        <label for="input-nota-promedio" class="font-bold block mb-2">Promedio</label>
+        <input type="number" id="input-nota-promedio" class="w-full p-2 bg-white" disabled>
+      </div>
+      <div class="flex-1 p-2">
+        <label for="input-promedio-final" class="font-bold block mb-2">Promedio Final</label>
+        <input type="number" id="input-promedio-final" class="w-full p-2 bg-white" disabled>
+      </div>
+    </div>
+
+    <!-- Div botones -->
+     <div class="flex justify-end gap-4 w-full pt-6">
+       <div>
+        <button 
+          class="flex gap-2 items-center bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          id="btn-calcular-promedio">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V13.5Zm0 2.25h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V18Zm2.498-6.75h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V13.5Zm0 2.25h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V18Zm2.504-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5Zm0 2.25h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V18Zm2.498-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5ZM8.25 6h7.5v2.25h-7.5V6ZM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 0 0 2.25 2.25h10.5a2.25 2.25 0 0 0 2.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0 0 12 2.25Z" />
+          </svg>
+          Calcular promedio
+        </button>
+       </div>
+       <div>
+        <button 
+          class="flex gap-2 items-center bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700"
+          id="clear-data">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+          </svg>          
+          Limpiar datos
+        </button>
+       </div>
+     </div>
+
+    <!-- Alertas -->
+    <div id="alerts" class="bg-yellow-100"></div>
+  </section>
+
+  <div class="developed-by">
+    <div>
+        <a href="https://hectorvaldes.dev/" target="_blank" class="dev">Developed by 🍄</a>
+    </div>
+    <div class="div__coffe">            
+        <a href='https://ko-fi.com/G2G33MGN8' target='_blank' ><img src="/images/kofi_p_logo_nolabel.png" width="30px" height="30px"/>Buy me a Coffee</a>
+    </div>        
+</div>
+<p class="version"></p>
+
+</body>
+<script src="popup.js"></script>
 </html>

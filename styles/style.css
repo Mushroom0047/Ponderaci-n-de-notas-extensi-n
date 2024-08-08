@@ -2,3 +2,67 @@ body{
     min-width: 600px;
     padding: 20px;
 }
+i{
+    font-size: 20px;
+}
+.eliminar_nota:hover{
+    color: brown;
+}
+.eliminar_nota{
+    width: 100%;
+    text-align: right;
+    padding-right: 20px;
+}
+.percent-span{
+    margin: -40px;
+}
+a.eliminar_nota{
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+a.eliminar_nota:hover{
+    transform: scale(1.1);
+    transition: all 0.4s ease;
+}
+.developed-by {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    padding: 15px 0px;
+    align-items: center;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+.developed-by div a{
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+.developed-by div a:hover{
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.div__coffe {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: right;
+}
+  
+.div__coffe a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--black);
+    text-align: left;
+    font-size: 12px;
+}
+.div__coffe img {
+    width: 30px;
+    height: 30px;
+}
+.version{
+    color: var(--white);
+    font-size: 10px;
+    padding: 0px;
+    line-height: 0px;
+}
