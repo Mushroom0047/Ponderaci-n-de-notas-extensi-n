@@ -11,6 +11,11 @@
 
 <body>
   <h1 class="text-3xl pb-4">Ponderación de Notas</h1>
+  <p class="pb-2">
+    Ingresa tus notas (calificaciones) y su respectivo porcentaje 
+    de ponderación para sacar el promedio ponderado y la calificación 
+    que necesitas en el examen final.
+  </p>
   <!-- Icono (usando Heroicons) -->
   <section class="bg-white border border-gray-300 rounded-lg p-6">
     <!-- Botón agregar nota -->
@@ -27,7 +32,7 @@
     <div class="flex flex-col mb-4 w-full" id="div-inputs"></div>
 
     <!-- Div examen -->
-    <div class="flex p-4 bg-blue-100 rounded-md space-x-4">
+    <!-- <div class="flex p-2 bg-blue-100">
       <div class="flex-1 p-2">
         <label for="input-nota-examen" class="font-bold block mb-2">Nota de exámen</label>
         <input type="number" id="input-nota-examen" class="w-full p-2" min="1" max="7" step="0.1">
@@ -36,22 +41,22 @@
         <label for="input-ponderacion-examen" class="font-bold block mb-2">Ponderación %</label>
         <input type="number" id="input-ponderacion-examen" class="w-full p-2" min="1" max="100" step="1">
       </div>
-    </div>
+    </div> -->
 
     <!-- Div resultados -->
-    <div class="flex p-4 bg-blue-200 rounded-md space-x-4">
+    <div class="flex p-2">
       <div class="flex-1 p-2">
-        <label for="input-nota-promedio" class="font-bold block mb-2">Promedio</label>
-        <input type="number" id="input-nota-promedio" class="w-full p-2 bg-white" disabled>
+        <label for="input-nota-promedio" class="font-bold block mb-2">Promedio ponderado</label>
+        <h3 class="label-promedio"></h3>
       </div>
       <div class="flex-1 p-2">
         <label for="input-promedio-final" class="font-bold block mb-2">Promedio Final</label>
-        <input type="number" id="input-promedio-final" class="w-full p-2 bg-white" disabled>
+        <h3 class="label-promedio-final"></h3>
       </div>
     </div>
 
     <!-- Div botones -->
-     <div class="flex justify-end gap-4 w-full pt-6">
+     <div class="flex justify-end gap-4 w-full pt-2">
        <div>
         <button 
           class="flex gap-2 items-center bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
@@ -75,7 +80,7 @@
      </div>
 
     <!-- Alertas -->
-    <div id="alerts" class="bg-yellow-100"></div>
+    <div id="alerts" class="bg-yellow-100 mt-2"></div>
   </section>
 
   <div class="developed-by">
@@ -83,7 +88,12 @@
         <a href="https://hectorvaldes.dev/" target="_blank" class="dev">Developed by 🍄</a>
     </div>
     <div class="div__coffe">            
-        <a href='https://ko-fi.com/G2G33MGN8' target='_blank' ><img src="/images/kofi_p_logo_nolabel.png" width="30px" height="30px"/>Buy me a Coffee</a>
+        <a href='https://ko-fi.com/G2G33MGN8' target='_blank' >
+          <img src="/images/kofi_p_logo_nolabel.png" 
+          width="30px" 
+          height="30px"/>
+          Buy me a Coffee
+        </a>
     </div>        
 </div>
 <p class="version"></p>
