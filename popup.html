@@ -10,8 +10,12 @@
 </head>
 
 <body>
-  <h1 class="text-3xl pb-4">Ponderación de Notas</h1>
-  <p class="pb-2">
+  <div class="flex gap-2 items-center">
+    <img src="/images/Logo app ponderaciones 300px.png" alt="logo-app" width="64px" height="64px">
+    <h1 class="text-3xl font-bold">Ponderación de Notas</h1>
+  </div>
+  <hr>
+  <p class="p-4">
     Ingresa tus notas (calificaciones) y su respectivo porcentaje 
     de ponderación para sacar el promedio ponderado y la calificación 
     que necesitas en el examen final.
@@ -20,7 +24,7 @@
   <section class="bg-white border border-gray-300 rounded-lg p-6">
     <!-- Botón agregar nota -->
     <div class="mb-4">
-      <button id="agregar-nota" class="flex gap-2 items-center bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+      <button id="agregar-nota" class="flex gap-2 items-center bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
         </svg>      
@@ -44,22 +48,23 @@
     </div> -->
 
     <!-- Div resultados -->
-    <div class="flex p-2">
+    <div class="flex p-2 bg-yellow-50 rounded">
       <div class="flex-1 p-2">
         <label for="input-nota-promedio" class="font-bold block mb-2">Promedio ponderado</label>
-        <h3 class="label-promedio"></h3>
+        <hr>
+        <h3 class="text-2xl label-promedio"></h3>
       </div>
-      <div class="flex-1 p-2">
+      <!-- <div class="flex-1 p-2">
         <label for="input-promedio-final" class="font-bold block mb-2">Promedio Final</label>
-        <h3 class="label-promedio-final"></h3>
-      </div>
+        <h3 class="text-2xl label-promedio-final"></h3>
+      </div> -->
     </div>
 
     <!-- Div botones -->
      <div class="flex justify-end gap-4 w-full pt-2">
        <div>
         <button 
-          class="flex gap-2 items-center bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          class="flex gap-2 items-center bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700"
           id="btn-calcular-promedio">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V13.5Zm0 2.25h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V18Zm2.498-6.75h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V13.5Zm0 2.25h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V18Zm2.504-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5Zm0 2.25h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V18Zm2.498-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5ZM8.25 6h7.5v2.25h-7.5V6ZM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 0 0 2.25 2.25h10.5a2.25 2.25 0 0 0 2.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0 0 12 2.25Z" />
@@ -69,7 +74,7 @@
        </div>
        <div>
         <button 
-          class="flex gap-2 items-center bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700"
+          class="flex gap-2 items-center bg-yellow-700 text-white px-4 py-2 rounded hover:bg-yellow-800"
           id="clear-data">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />

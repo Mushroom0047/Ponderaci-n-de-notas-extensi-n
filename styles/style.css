@@ -6,7 +6,7 @@ i{
     font-size: 20px;
 }
 .eliminar_nota:hover{
-    color: brown;
+    color: #f69220;
 }
 .eliminar_nota{
     width: 100%;
@@ -24,6 +24,7 @@ a.eliminar_nota:hover{
     transform: scale(1.1);
     transition: all 0.4s ease;
 }
+
 .developed-by {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -34,11 +35,10 @@ a.eliminar_nota:hover{
     font-family: 'Courier New', Courier, monospace;
 }
 .developed-by div a{
-    color: var(--white);
     transition: all 0.3s ease;
 }
 .developed-by div a:hover{
-    color: var(--white);
+    color: #f69220;
     transition: all 0.3s ease;
 }
 
@@ -52,7 +52,6 @@ a.eliminar_nota:hover{
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: var(--black);
     text-align: left;
     font-size: 12px;
 }
@@ -61,7 +60,7 @@ a.eliminar_nota:hover{
     height: 30px;
 }
 .version{
-    color: var(--white);
+    color: #f69220;
     font-size: 10px;
     padding: 0px;
     line-height: 0px;
