@@ -15,9 +15,7 @@
           }
     },
     "permissions": [
-      "storage",
-      "activeTab",
-      "scripting"
+      "storage"
     ],
     "icons": {
         "16": "/images/get_started16.png",        
